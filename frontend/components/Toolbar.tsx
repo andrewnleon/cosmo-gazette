@@ -1,0 +1,126 @@
+import React, { useEffect, useState } from "react";
+import { GoThreeBars } from "react-icons/go";
+import {
+  Nav,
+  Navbar,
+  Stack,
+  Container,
+  Col,
+  Button,
+} from "react-bootstrap";
+import Image from "next/image";
+import ToolbarMainMenu from "./ToolbarMainMenu";
+import MobileMenuCanvas from "./ToolbarMenuCanvas";
+import Logo from "../public/logo.svg";
+import Link from "next/link";
+
+export default function ToolBar() {
+  //Mobile menu toggle
+  const options = [{ scroll: false, backdrop: true }];
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const toggleShow = () => setShow((s) => !s);
+
+  //Smooth navbar background
+  const [color, setColor] = useState(false);
+  const [size, setSize] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 70) {
+      setColor(true);
+      setSize(true);
+    } else {
+      setColor(false);
+      setSize(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, []);
+
+  return (
+    <Container fluid>
+      <Navbar
+        data-testid="Navbar"
+        id="toolbar"
+        fixed="top"
+        expand="lg"
+        variant="dark"
+        className={`${size ? "py-2" : "py-2"} ${
+          color ? "bg-primary bg-opacity-95" : "bg-primary bg-opacity-75"
+        }`}
+        style={{ transition: "all 0.5s ease-out" }}
+        role="navigation"
+      >
+        <Container>
+          <Col
+            lg={1}
+            style={{
+              top: "0px",
+              left: "0px",
+              width: "50px",
+              position: "relative",
+            }}
+          >
+            <Link href="/">
+              <Image
+                alt="Andrew Leonberger Portoflio"
+                className="navbar-brand"
+                src={Logo}
+                quality={100}
+                width={50}
+                height={50}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                }}
+                priority
+              />
+            </Link>
+          </Col>
+          <Stack
+            className="me-auto my-auto d-none d-sm-none d-md-none d-lg-block"
+            direction="horizontal"
+            gap={1}
+          >
+            <ToolbarMainMenu />
+          </Stack>
+          <Stack
+            className="my-auto d-none d-sm-none d-md-none d-lg-block"
+            direction="horizontal"
+            gap={1}
+          >
+            {/* <Form className="d-flex mr-auto">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <Button variant="primary">Search</Button>
+              </Form> */}
+          </Stack>
+          <Nav>
+            <Button
+              onClick={toggleShow}
+              className="me-3 p-0 m-0 bg-transparent nav-link"
+            >
+              <GoThreeBars size={32} />
+            </Button>
+          </Nav>
+          {options.map((props, id) => (
+            <MobileMenuCanvas
+              name="MobileMenu"
+              show={show}
+              onHide={handleClose}
+              key={id}
+              {...props}
+            />
+          ))}
+        </Container>
+      </Navbar>
+    </Container>
+  );
+}

@@ -1,0 +1,54 @@
+// Fonts
+.font-secondary { font-family: "Space Grotesk", sans-serif; }
+* {
+  font-family: "Roboto", sans-serif;
+  padding:0;
+  margin:0;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/SpaceGrotesk[wght].woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// Components
+@import "buttons.scss";
+@import "Components.scss";
+@import "Keyframes.scss";
+
+// Variables
+@import "theme.scss";
+
+$primary: #003366;
+$secondary: #0099ff;
+
+// Theme
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": #161616,
+  "dark-grey": #a0a0a0,
+  "grey": #C4C4C4, 
+);
+$custom-colors: (
+  "light-primary": #f5f5f5,
+  "light-secondary": #EEEEEE,
+  "light-tritary": #eaeaea,
+);
+$theme_colors: map-merge($theme-colors, $custom-colors);
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body.modal-open { min-height: 100vh !important; overflow: hidden; padding-right:0!important; }
+main { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; display: grid; }
+
+.feedback-item {min-height: 375px;}
+.feedback-item .carousel-caption { height:100%;}
+@include media-breakpoint-only(xs) { .feedback-item {min-height: 500px;} .feedback-item .blockquote {font-size: 0.85rem!important;} }
+@include media-breakpoint-only(sm) { .feedback-item {min-height: 500px;} .feedback-item .blockquote {font-size: 0.85rem!important;}  }
