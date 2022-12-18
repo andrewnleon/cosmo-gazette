@@ -16,3 +16,16 @@ module.exports = withPWA({
   compiler: { styledComponents: true },
   pageExtensions: ["json", "js", "svg", "tsx", "ts"],
 })
+
+
+// const nextConfig = {
+//   images: {
+//     domains: [
+//       "ik.imagekit.io",
+//       "localhost:3000",
+//     ],
+//   },
+//   compiler: { styledComponents: true },
+//   pageExtensions: ["json", "js", "svg", "tsx", "ts"],
+// }
+// module.exports = nextConfig

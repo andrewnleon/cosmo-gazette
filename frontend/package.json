@@ -1,11 +1,11 @@
 {
-  "name": "portfolionextjs",
+  "name": "cosmo-gazette",
   "version": "2.0.0",
   "private": true,
   "scripts": {
     "start:dev": "next dev",
-    "start": "next start",
     "build": "next build",
+    "server": "node server.js",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:run": "next run analyze",
     "lint": "next lint"
