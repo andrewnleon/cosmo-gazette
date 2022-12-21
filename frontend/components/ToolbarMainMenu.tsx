@@ -18,17 +18,16 @@ export default function ToolbarMenu() {
             </NavLink>
           </li>
         </Scrollspy> */}
-        <NavLink href="/portfolio">
-          <span>Portfolio</span>
+        <NavLink href="/planets">
+          <span>Planets</span>
         </NavLink> 
-        <NavLink href="/case-studies">
-          <span>Case Studies</span>
-        </NavLink>
-
+        <NavLink href="/galaxies">
+          <span>Galaxies</span>
+        </NavLink>  
         <NavLink href="/about">
           <span>About</span>
         </NavLink>
-        <NavLink href="/about">
+        <NavLink href="/contact">
           <span>Contact</span>
         </NavLink> 
       </Nav>

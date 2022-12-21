@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
 import Page from "../../components/Layout/Page";
 
-export default function index({ prop }) {
+export default function index({ planet }) {
   return (
     <>
       <Page
-        key={prop.id}
+        key={planet.id}
       >
         <Container
           fluid
@@ -25,7 +25,7 @@ export default function index({ prop }) {
         <Container className="bg-white py-6">
           <Row>
             <Col lg={12}>
-              {prop.map((prop) => (
+              {planet.map((prop) => (
                 <Link
                   key={prop.id}
                   href={`/planets/${prop.slug}`}
@@ -46,5 +46,5 @@ export async function getServerSideProps() {
   `${process.env.NEXT_PUBLIC_API_URI}/planets`
   );
   const data = await res.json();
-  return { props: { prop: data } };
+  return { props: { planet: data } };
 }

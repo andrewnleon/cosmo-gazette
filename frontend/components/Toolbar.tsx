@@ -103,12 +103,12 @@ export default function ToolBar() {
               </Form> */}
           </Stack>
           <Nav>
-            <Button
+            <button
               onClick={toggleShow}
-              className="me-3 p-0 m-0 bg-transparent nav-link"
+              className="me-3 p-0 m-0 bg-transparent nav-link border-0"
             >
               <GoThreeBars size={32} />
-            </Button>
+            </button>
           </Nav>
           {options.map((props, id) => (
             <MobileMenuCanvas

@@ -52,6 +52,7 @@ export type Planet = {
   slug: string;
   diameter: string;
   mass: string;
+  distance_from_earth: string;
   distance_from_sun: string;
   atmosphere: string;
   moons: string;

@@ -1,7 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Page from "../../components/Layout/Page";
 
-const Planets = ({ planet }) => {
+// const Planets = ({ planet }) => {
+const Planets = ({planet}) => {
   return (
     <>
     <Page key={planet.id}>
@@ -12,14 +13,14 @@ const Planets = ({ planet }) => {
         <Container>
           <Row>
             <Col lg={12}>
-              <h1 className="mt-19 mb-4 d-block h4 text-uppercase">
+              <h1 className="mb-4 mt-19 d-block h4 text-uppercase">
               {planet.name}
               </h1>
             </Col>
           </Row>
         </Container>
       </Container>
-      <Container className="bg-white py-6">
+      <Container className="py-6 bg-white">
         <Row>
           <Col lg={12}>
           <b>General:</b>
@@ -47,16 +48,6 @@ export const getStaticProps = async ({ params }) => {
   const slug = params.slug;
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URI}/planets/${slug}`);
   const data = await res.json();
-  if (!data) {
-    return {
-      // redirect: {
-      //   destination: '/',
-      //   permanent: false,
-      //   // statusCode: 301
-      // },
-      notFound: true,
-    }
-  }
   return {
     props: { planet: data },
   };
@@ -65,10 +56,10 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URI}/planets`);
   const data = await res.json();
-  const paths = data.map((planet: { slug: string; }) => {
+  const paths = data.map((planets) => {
     return {
       params: {
-        slug: planet.slug,
+        slug: planets.slug,
       },
     };
   });

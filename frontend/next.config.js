@@ -14,7 +14,7 @@ module.exports = withPWA({
     ],
   },
   compiler: { styledComponents: true },
-  pageExtensions: ["json", "js", "svg", "tsx", "ts"],
+  pageExtensions: ["json", "js", "svg", "jpg", "tsx", "ts"],
 })
 
 
