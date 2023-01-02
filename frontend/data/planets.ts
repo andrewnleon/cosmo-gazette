@@ -10,8 +10,9 @@ export const planets = [
     atmosphere: "Yes",
     moons: "0",
     rings: "0",
-    description: "The Sun is the star at the center of the Solar System and is responsible for the Earth's climate and weather. It is a medium-sized star, about half way through its life. The Sun is made up of hot plasma (a superheated, ionized gas) and generates energy through nuclear fusion. It is the most important source of energy for life on Earth. The Sun's diameter is about 109 times that of Earth and its mass is about 330,000 times that of Earth.",
-  }, 
+    description:
+      "The Sun is the star at the center of the Solar System and is responsible for the Earth's climate and weather. It is a medium-sized star, about half way through its life. The Sun is made up of hot plasma (a superheated, ionized gas) and generates energy through nuclear fusion. It is the most important source of energy for life on Earth. The Sun's diameter is about 109 times that of Earth and its mass is about 330,000 times that of Earth.",
+  },
   {
     id: "2",
     name: "Mercury",
@@ -25,7 +26,7 @@ export const planets = [
     rings: "0",
     description:
       "Mercury is the smallest and innermost planet in the solar system. It is a rocky planet with a surface marked by impact craters and cliffs. Mercury has no atmosphere, no moons, and no rings. It has a very thin exosphere, which is a layer of gases that extends a few hundred kilometers above the surface. Mercury is named after the Roman god of commerce and communication.",
-    },
+  },
   {
     id: "3",
     name: "Venus",
@@ -39,7 +40,7 @@ export const planets = [
     rings: "0",
     description:
       "Venus is the second planet from the sun and the sixth largest planet in the solar system. It is a rocky planet with a thick atmosphere made up mostly of carbon dioxide and nitrogen. The atmosphere is thick enough to create a greenhouse effect that traps heat on the surface, making Venus the hottest planet in the solar system. Venus has no moons or rings. It is named after the Roman goddess of love and beauty.",
-    },
+  },
   {
     id: "4",
     name: "Earth",
@@ -149,6 +150,7 @@ export const planets = [
     atmosphere: "0",
     moons: "0",
     rings: "0",
-    description: "The moon is Earth's only natural satellite and is the fifth-largest natural satellite in the Solar System. It is rocky and dusty, with vast areas of solid rock interspersed with impact craters, mountains, and other geological features. The moon does not have an atmosphere or rings, and it has no known moons of its own."
-  }
+    description:
+      "The moon is Earth's only natural satellite and is the fifth-largest natural satellite in the Solar System. It is rocky and dusty, with vast areas of solid rock interspersed with impact craters, mountains, and other geological features. The moon does not have an atmosphere or rings, and it has no known moons of its own.",
+  },
 ];
