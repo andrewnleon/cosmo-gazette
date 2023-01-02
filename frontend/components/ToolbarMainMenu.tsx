@@ -24,12 +24,6 @@ export default function ToolbarMenu() {
         <NavLink href="/galaxies">
           <span>Galaxies</span>
         </NavLink>  
-        <NavLink href="/about">
-          <span>About</span>
-        </NavLink>
-        <NavLink href="/contact">
-          <span>Contact</span>
-        </NavLink> 
       </Nav>
     </>
   );

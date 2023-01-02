@@ -1,25 +1,10 @@
 import * as React from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { MeshWobbleMaterial, Stars } from "@react-three/drei";
-import { Sphere } from "@react-three/drei/core";
-import Image from "next/image";
-import { Mesh, TextureLoader } from "three";
-import { useRouter } from "next/router";
-import { useSpring, animated } from "@react-spring/three";
+import { TextureLoader } from "three";
 
 export default function Earth() {
   return (
     <Canvas>
-      <Stars
-        radius={200}
-        depth={60}
-        count={20000}
-        factor={5}
-        saturation={0}
-        fade={true}
-        speed={0}
-      />
       <ambientLight intensity={0.02} />
       <spotLight position={[6, 7, 9]} angle={0.30} />
       <PlanetEarth position={[0, 0, 0]} />
@@ -43,7 +28,7 @@ function PlanetEarth(props: JSX.IntrinsicElements["mesh"]) {
   const [
     earthMap,
     cloudMapAlpha,
-    roughMap,
+    normalMap,
     invertMap,
   ] = useLoader(TextureLoader, [
     `${process.env.NEXT_PUBLIC_URL}/assets/textures/earth_day_texture.jpg`,
@@ -58,10 +43,10 @@ function PlanetEarth(props: JSX.IntrinsicElements["mesh"]) {
       <mesh
         //@ts-ignore
         ref={cloudMesh}
-        {...props}
-        scale={1.5}
+        scale={3}
         rotation-x={Math.PI * 0.0}
         rotation-y={Math.PI * 0.25}
+        {...props}
       >
         <sphereGeometry args={[1.010, 100]} />
          <meshStandardMaterial
@@ -74,15 +59,15 @@ function PlanetEarth(props: JSX.IntrinsicElements["mesh"]) {
       <mesh
         //@ts-ignore
         ref={earthMesh}
-        {...props}
-        scale={1.5}
+        scale={3}
         rotation-x={Math.PI * 2}
         rotation-y={Math.PI * 0.-39.3}
+        {...props}
       >
         <sphereGeometry args={[1.005, 31]} />
          <meshStandardMaterial
           map={earthMap}
-          normalMap={roughMap}
+          normalMap={normalMap}
           roughnessMap={invertMap}
         />
       </mesh>

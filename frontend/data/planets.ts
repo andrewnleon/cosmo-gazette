@@ -1,3 +1,5 @@
+import Earth from "../components/Planets/Earth";
+
 export const planets = [
   {
     id: "1",
@@ -12,7 +14,7 @@ export const planets = [
     rings: "none",
     description:
       "Mercury is the smallest and innermost planet in the solar system. It is a rocky planet with a surface marked by impact craters and cliffs. Mercury has no atmosphere, no moons, and no rings. It has a very thin exosphere, which is a layer of gases that extends a few hundred kilometers above the surface. Mercury is named after the Roman god of commerce and communication.",
-  },
+    },
   {
     id: "2",
     name: "Venus",
@@ -26,7 +28,7 @@ export const planets = [
     rings: "none",
     description:
       "Venus is the second planet from the sun and the sixth largest planet in the solar system. It is a rocky planet with a thick atmosphere made up mostly of carbon dioxide and nitrogen. The atmosphere is thick enough to create a greenhouse effect that traps heat on the surface, making Venus the hottest planet in the solar system. Venus has no moons or rings. It is named after the Roman goddess of love and beauty.",
-  },
+    },
   {
     id: "3",
     name: "Earth",

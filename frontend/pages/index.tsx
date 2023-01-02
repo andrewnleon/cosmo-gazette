@@ -1,13 +1,43 @@
 import type { NextPage } from "next";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import Cover from "../components/Cover";
-// import Planets from "../components/Planets";
+import PlanetCards from "../components/PlanetCards";
 
 const Home: NextPage = () => {
   return (
     <>
       <main role="main">
         <Cover />
+        <Container id="planets" className="text-white bg-black position-relative z1 text-center pt-5 pb-5" fluid>
+          <Container>
+            <Col className="mt-0 mb-3 pb-1">
+              <h2 className="text-uppercase display-6 font-secondary">Planets</h2>
+              <hr className="spacer mx-auto" />
+            </Col>
+            <Row xs={1} md={3} className="g-4">
+
+              <PlanetCards />
+
+            </Row>
+          </Container>
+        </Container>
+        <Container className="text-white bg-black position-relative z1 text-center pt-5 pb-5" fluid>
+          <Container>
+            <Col className="mt-0 mb-3 pb-1">
+              <h2 className="text-uppercase display-6 font-secondary">Galaxies</h2>
+              <hr className="spacer mx-auto" />
+            </Col>
+            <Row xs={1} md={3} lg={12} className="g-4"></Row>
+          </Container>
+        </Container>
       </main>
+      <footer className="bg-dark">
+        <Container>
+          <Row className="d-flex flex-column flex-sm-row pt-3 mb-0 pb-0 justify-content-center align-content-center text-center opacity-40">
+            <p className="text-white mt-2">@CosmoGazette 2023</p>
+          </Row>
+        </Container>
+      </footer>
     </>
   );
 };

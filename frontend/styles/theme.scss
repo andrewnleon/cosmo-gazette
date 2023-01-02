@@ -4,6 +4,8 @@ $enable-shadows: true !default;
 $enable-negative-margins: true !default;
 $enable-rounded: true !default;
 
+$body-bg: black;
+
 //Grid
 $grid-breakpoints: (
   xs: 0,

@@ -87,21 +87,6 @@ export default function ToolBar() {
           >
             <ToolbarMainMenu />
           </Stack>
-          <Stack
-            className="my-auto d-none d-sm-none d-md-none d-lg-block"
-            direction="horizontal"
-            gap={1}
-          >
-            {/* <Form className="d-flex mr-auto">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="primary">Search</Button>
-              </Form> */}
-          </Stack>
           <Nav>
             <button
               onClick={toggleShow}
