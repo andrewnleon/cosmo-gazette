@@ -5,8 +5,8 @@ import { TextureLoader } from "three";
 export default function Sun() {
   return (
     <Canvas>
-      <ambientLight intensity={0.01} />
-      <spotLight position={[0, 50, 100]} color={0xffffff} angle={1} />
+      <ambientLight intensity={0.70} />
+      <spotLight position={[-50,150, 90]} color={0xffcc00} angle={1} />
       <PlanetMoon position={[0, 0, 0]} />
     </Canvas>
   );

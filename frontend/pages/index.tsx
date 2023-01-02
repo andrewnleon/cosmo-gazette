@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, CardGroup, Col, Container, Row } from "react-bootstrap";
 import Cover from "../components/Cover";
 import PlanetCards from "../components/PlanetCards";
 
@@ -8,17 +8,14 @@ const Home: NextPage = () => {
     <>
       <main role="main">
         <Cover />
-        <Container id="planets" className="text-white bg-black position-relative z1 text-center pt-5 pb-5" fluid>
+        <Container className="text-white bg-black position-relative z1 text-center pt-5 pb-5" fluid>
+          <Container id="planets" style={{height:"90px"}} />
           <Container>
             <Col className="mt-0 mb-3 pb-1">
               <h2 className="text-uppercase display-6 font-secondary">Planets</h2>
               <hr className="spacer mx-auto" />
             </Col>
-            <Row xs={1} md={3} className="g-4">
-
-              <PlanetCards />
-
-            </Row>
+            <PlanetCards />
           </Container>
         </Container>
         <Container className="text-white bg-black position-relative z1 text-center pt-5 pb-5" fluid>

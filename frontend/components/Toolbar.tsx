@@ -49,7 +49,7 @@ export default function ToolBar() {
         expand="lg"
         variant="dark"
         className={`${size ? "py-2" : "py-2"} ${
-          color ? "bg-primary bg-opacity-95" : "bg-primary bg-opacity-75"
+          color ? "bg-primary bg-opacity-95" : "bg-primary bg-opacity-0"
         }`}
         style={{ transition: "all 0.5s ease-out" }}
         role="navigation"

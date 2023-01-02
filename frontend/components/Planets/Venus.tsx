@@ -6,7 +6,7 @@ export default function Venus() {
   return (
     <Canvas>
       <ambientLight intensity={0.01} />
-      <spotLight position={[0, 50, 100]} color={0xffffff} angle={1} />
+      <spotLight position={[0, 50, 100]} color={0xd46400} angle={1} />
       <PlanetMoon position={[0, 0, 0]} />
     </Canvas>
   );
@@ -26,7 +26,7 @@ function PlanetMoon(props: JSX.IntrinsicElements["mesh"]) {
     moonMap,
     normalMap,
   ] = useLoader(TextureLoader, [
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/moon_texture.jpg`,
+    `${process.env.NEXT_PUBLIC_URL}/assets/textures/venus_texture.jpg`,
     `${process.env.NEXT_PUBLIC_URL}/assets/textures/8k_earth_normal_map.jpg`,
   ]);
   return (

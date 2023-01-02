@@ -2,31 +2,30 @@ import * as React from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 
-export default function Mercury() {
+export default function Pluto() {
   return (
     <Canvas>
-      <ambientLight intensity={1} />
-      <PlanetMoon position={[0, 0, 0]} />
+      <ambientLight intensity={0.04} />
+      <spotLight position={[-11, 0, 90]} color={0xffffff} angle={-180} />
+      <PlanetMars position={[0, 0, 0]} />
     </Canvas>
   );
 }
 
-function PlanetMoon(props: JSX.IntrinsicElements["mesh"]) {
-  const moonMesh = React.useRef();
+function PlanetMars(props: JSX.IntrinsicElements["mesh"]) {
+  const marsMesh = React.useRef();
 
   useFrame(() => {
     //@ts-ignore
-    moonMesh.current.rotation.x = 0.10;
+    marsMesh.current.rotation.x = 0.10;
     //@ts-ignore
-    moonMesh.current.rotation.y += 0.0001;
+    marsMesh.current.rotation.y += 0.0001;
   });
 
   const [
-    moonMap,
-    normalMap,
+    marsMap,
   ] = useLoader(TextureLoader, [
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/mercury_texture.jpg`,
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/8k_earth_normal_map.jpg`,
+    `${process.env.NEXT_PUBLIC_URL}/assets/textures/mars_texture.jpg`,
   ]);
   return (
     //@ts-ignore
@@ -34,7 +33,7 @@ function PlanetMoon(props: JSX.IntrinsicElements["mesh"]) {
       {/* Globe */}
       <mesh
         //@ts-ignore
-        ref={moonMesh}
+        ref={marsMesh}
         scale={3}
         rotation-x={Math.PI * 2}
         rotation-y={Math.PI * 0.-39.3}
@@ -42,9 +41,7 @@ function PlanetMoon(props: JSX.IntrinsicElements["mesh"]) {
       >
         <sphereGeometry args={[1.005, 31]} />
          <meshStandardMaterial
-          map={moonMap}
-          normalMap={normalMap}
-          roughnessMap={normalMap}
+          map={marsMap}
         />
       </mesh>
     </>
