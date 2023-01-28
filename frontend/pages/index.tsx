@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <main role="main">
         <Cover />
         <Container className="text-white bg-black position-relative z1 text-center pt-5 pb-5" fluid>
-          <Container id="planets" style={{height:"90px"}} />
+          <Container id="planets" style={{ height: "90px" }} />
           <Container>
             <Col className="mt-0 mb-3 pb-1">
               <h2 className="text-uppercase display-6 font-secondary">Planets</h2>

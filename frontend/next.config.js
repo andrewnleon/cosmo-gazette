@@ -21,9 +21,9 @@
 const nextConfig = {
   images: {
     domains: [
-      "ik.imagekit.io",
       "localhost:3000",
       "cosmo-gazette.vercel.app",
+      "localhost",
     ],
   },
   compiler: { styledComponents: true },

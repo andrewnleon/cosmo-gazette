@@ -2,6 +2,7 @@ export const planets = [
   {
     id: "1",
     name: "Sun",
+    thumbnail: "../assets/textures/sun.png",
     slug: "sun",
     diameter: "1,392,684",
     mass: "1.989 x 10^30",
@@ -16,6 +17,7 @@ export const planets = [
   {
     id: "2",
     name: "Mercury",
+    thumbnail: "../assets/textures/mercury.png",
     slug: "mercury",
     diameter: "4879",
     mass: "0.33",
@@ -30,6 +32,7 @@ export const planets = [
   {
     id: "3",
     name: "Venus",
+    thumbnail: "../assets/textures/venus.png",
     slug: "venus",
     diameter: "12104",
     mass: "4.87",
@@ -44,6 +47,7 @@ export const planets = [
   {
     id: "4",
     name: "Earth",
+    thumbnail: "../assets/textures/earth.png",
     slug: "earth",
     diameter: "12756",
     mass: "5.97",
@@ -58,6 +62,7 @@ export const planets = [
   {
     id: "5",
     name: "Mars",
+    thumbnail: "../assets/textures/mars.png",
     slug: "mars",
     diameter: "6792",
     mass: "0.642",
@@ -72,6 +77,7 @@ export const planets = [
   {
     id: "6",
     name: "Jupiter",
+    thumbnail: "../assets/textures/jupiter.png",
     slug: "jupiter",
     diameter: "142984",
     mass: "1898",
@@ -86,6 +92,7 @@ export const planets = [
   {
     id: "7",
     name: "Saturn",
+    thumbnail: "../assets/textures/saturn.png",
     slug: "saturn",
     diameter: "120536",
     mass: "568",
@@ -100,6 +107,7 @@ export const planets = [
   {
     id: "8",
     name: "Uranus",
+    thumbnail: "../assets/textures/uranus.png",
     slug: "uranus",
     diameter: "51118",
     mass: "86.8",
@@ -114,6 +122,7 @@ export const planets = [
   {
     id: "9",
     name: "Neptune",
+    thumbnail: "../assets/textures/neptune.png",
     slug: "neptune",
     diameter: "49528",
     mass: "102",
@@ -128,6 +137,7 @@ export const planets = [
   {
     id: "10",
     name: "Pluto",
+    thumbnail: "../assets/textures/pluto.png",
     slug: "pluto",
     diameter: "2370",
     mass: "0.0146",
@@ -142,6 +152,7 @@ export const planets = [
   {
     id: "11",
     name: "Moon",
+    thumbnail: "../assets/textures/moon.png",
     slug: "moon",
     diameter: "3474",
     mass: "7.34767309e+22",

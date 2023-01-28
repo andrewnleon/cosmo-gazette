@@ -58,7 +58,12 @@ export type Planet = {
   moons: string;
   rings: string;
   description: string;
+  thumbnail: string;
 };
+
+
+
+
 export type Galaxy = {
   id: string;
   name: string;

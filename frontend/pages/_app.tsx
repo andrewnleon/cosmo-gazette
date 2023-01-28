@@ -4,7 +4,7 @@ import { SWRConfig } from "swr";
 import ToolBar from "../components/Toolbar";
 import "../styles/app.css";
 
-const MyApp = ({ Component, pageProps }) => {
+const CosmoApp = ({ Component, pageProps }) => {
   return (
     <>
       <SWRConfig
@@ -28,4 +28,4 @@ const MyApp = ({ Component, pageProps }) => {
     </>
   );
 };
-export default MyApp;
+export default CosmoApp;
