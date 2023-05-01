@@ -25,7 +25,7 @@ function PlanetEarth(props: JSX.IntrinsicElements["mesh"]) {
   const [
     earthMap,
   ] = useLoader(TextureLoader, [
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/jupiter_texture.jpg`,
+    `/assets/textures/jupiter_texture.jpg`,
   ]);
   return (
     //@ts-ignore

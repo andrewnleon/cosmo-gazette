@@ -31,10 +31,10 @@ function PlanetEarth(props: JSX.IntrinsicElements["mesh"]) {
     normalMap,
     invertMap,
   ] = useLoader(TextureLoader, [
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/earth_day_texture.jpg`,
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/earth_clouds_texture.png`,
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/8k_earth_normal_map.jpg`,
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/earth_specular_texture.jpg`,
+    `/assets/textures/earth_day_texture.jpg`,
+    `/assets/textures/earth_clouds_texture.png`,
+    `/assets/textures/8k_earth_normal_map.jpg`,
+    `/assets/textures/earth_specular_texture.jpg`,
   ]);
   return (
     //@ts-ignore

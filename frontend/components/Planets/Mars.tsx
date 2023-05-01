@@ -25,7 +25,7 @@ function PlanetMars(props: JSX.IntrinsicElements["mesh"]) {
   const [
     marsMap,
   ] = useLoader(TextureLoader, [
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/mars_texture.jpg`,
+    `/assets/textures/mars_texture.jpg`,
   ]);
   return (
     //@ts-ignore

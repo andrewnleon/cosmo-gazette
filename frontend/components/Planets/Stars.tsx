@@ -6,7 +6,6 @@ export default function SpaceStars() {
   return (
     <Canvas>
       <Stars
-        //@ts-ignore
         radius={200}
         depth={50}
         count={20000}

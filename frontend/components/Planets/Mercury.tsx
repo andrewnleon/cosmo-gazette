@@ -25,8 +25,8 @@ function PlanetMoon(props: JSX.IntrinsicElements["mesh"]) {
     moonMap,
     normalMap,
   ] = useLoader(TextureLoader, [
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/mercury_texture.jpg`,
-    `${process.env.NEXT_PUBLIC_URL}/assets/textures/8k_earth_normal_map.jpg`,
+    `/assets/textures/mercury_texture.jpg`,
+    `/assets/textures/8k_earth_normal_map.jpg`,
   ]);
   return (
     //@ts-ignore
