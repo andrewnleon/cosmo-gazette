@@ -1,0 +1,168 @@
+* {
+  font-family: "Roboto", sans-serif;
+  padding:0;
+  margin:0;
+}
+section { width: 100%; display: block; }
+canvas { vertical-align: middle; }
+
+// Fonts
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/SpaceGrotesk[wght].woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.font-secondary { font-family: "Space Grotesk", sans-serif; }
+
+// Components
+@import "Keyframes.scss";
+
+// Variables
+@import "theme.scss";
+
+/* Color Theme Swatches in Hex */
+$deepBlue: #000c1f;
+$stars: #ffffff;
+$gasPink: #fdeff9;
+$nebu: #321051;
+$blueTemp: #321051;
+
+/* Color Theme Swatches in Hex */
+.Galaxy-Orchid-2-1-hex { color: #76005F; }
+.Galaxy-Orchid-2-2-hex { color: #01A9DE; }
+.Galaxy-Orchid-2-3-hex { color: #3E236C; }
+.Galaxy-Orchid-2-4-hex { color: #193375; }
+.Galaxy-Orchid-2-5-hex { color: #7F42B3; }
+// #000c1f (a deep blue color that could be used to represent the vastness of space)
+// #ffffff (a bright white color that could be used to represent stars)
+// #fdeff9 (a pale pink color that could be used to represent the clouds of gas and dust that make up galaxies)
+// #f8d5e9 (a pale purple color that could be used to represent the colors of nebulae)
+// #f7dbe6 (a pale blue color that could be used to represent the cool temperatures of space)
+// #ffb6c1 (a pale pink color that could be used to represent the warm glow of some galaxies)
+
+
+// Theme
+$primary: #211239;
+$secondary: #3E236C;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": #161616,
+  "dark-grey": #a0a0a0,
+  "grey": #C4C4C4, 
+);
+$custom-colors: (
+  "light-primary": #f5f5f5,
+  "light-secondary": #EEEEEE,
+  "light-tritary": #eaeaea,
+);
+$theme_colors: map-merge($theme-colors, $custom-colors);
+.spacer { height:4px; display:block; background-color: #00c3ff; max-width: 50px; border:0;}
+
+.scroll_anchor {display:block; min-height:100px;}
+
+#toolbar { padding-right: 0; }
+#toolbar .nav-link { position: relative; font-weight: 500; text-decoration: none; margin-right:10px; margin-left:10px; top:0px; }
+#toolbar .nav-link::before { content: ''; position: absolute; width: 100%; height: 3px; border-radius: 10px; background-color: #0099ff5d; bottom: 0; left: 0; transform-origin: right; transform: scaleX(0); transition: transform .3s ease-in-out; }
+#toolbar .nav-link:hover::before { transform-origin: left; transform: scaleX(1); }
+
+#toolbar .nav-link.active { border-top: 7px solid #0099ff; color:#FFFFFF; position: relative; margin-top:-22px; padding-top:23px; } 
+#toolbar .nav-link.active::after { content: ""; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid #0099ff; display: inline-block; margin:-1px auto 0; position: absolute; top: 0; left: 40%; }
+
+.card_thumbnail { position:relative; overflow:hidden; height:100%; width:100%; cursor: pointer; }
+.card_thumbnail .card_caption { position:absolute; opacity:0%; left:0; width:100%; height:100%; padding:0; text-align:center; color:#fff; z-index:2; transition: all 0.3s ease-in-out; }
+.card_thumbnail:hover .card_caption { opacity:0.95; }
+
+//Buttons
+.btn-outline-primary {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  transition: opacity 0.3s linear 0s;
+  &:hover {
+    .wave { top: -120px; box-shadow: inset 0 0 50px #9d00ffec;}
+    .btn-icon{
+      visibility: visible;
+      display:inline-block;
+      color:white;
+      opacity: 1;
+      animation: fadeIn 0.5s;
+    }
+  }
+  span { position: relative; width: 180px; padding:10px 4px; z-index: 1; display: block; color: white; font-size: 1.3rem; font-weight: 300; letter-spacing: 1px; left: 0; transition: all 0.2s ease-out 0s; }
+  span:hover{ left: -18px; }
+  .btn-icon { position: absolute; width: 26px; top: 20px; right: -14px; line-height: 18px; opacity: 0; transition: opacity 0.15s linear 0s; }
+}
+.btn-outline-secondary {
+position: relative;
+display: block;
+text-decoration: none;
+overflow: hidden;
+transition: opacity 0.3s linear 0s;
+&:hover {
+    .wave { top: -120px; box-shadow: inset 0 0 50px #9d00ffec;}
+    .btn-icon{
+    visibility: visible;
+    display:inline-block;
+    color:white;
+    opacity: 1;
+    animation: fadeIn 0.5s;
+  }
+}
+span { position: relative; width: 180px; padding:10px 4px; z-index: 1; display: block; color: white; font-size: 1.3rem; font-weight: 300; letter-spacing: 1px; left: 0; transition: all 0.2s ease-out 0s; }
+span:hover{ left: -18px; }
+.btn-icon { 
+  position: absolute;
+  width: 72px;
+  top: 20px;
+  right: -33px;
+  line-height: 18px;
+  opacity: 0;
+  transition: opacity .15s linear 0s;}
+}
+.wave {
+  width: 100%;
+  height: 230px;
+  background-color: #321051;
+  position: absolute;
+  left: 0;
+  top: -40px;
+  transition: 1s;
+  &::before,
+  &::after {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+  &::before {
+    border-radius: 45%;
+    background-color: #ffffff08;
+    animation: wave 15s linear infinite;
+  }
+  &::after {
+    border-radius: 40%;
+    background-color: #ffffff05;
+    animation: wave 30s linear infinite;
+  }
+}
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body.modal-open { min-height: 100vh !important; overflow: hidden; padding-right:0!important; }
+main { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; display: grid; }
+
+.feedback-item {min-height: 375px;}
+.feedback-item .carousel-caption { height:100%;}
+@include media-breakpoint-only(xs) { .feedback-item {min-height: 500px;} .feedback-item .blockquote {font-size: 0.85rem!important;} }
+@include media-breakpoint-only(sm) { .feedback-item {min-height: 500px;} .feedback-item .blockquote {font-size: 0.85rem!important;}  }

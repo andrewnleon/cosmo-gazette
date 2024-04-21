@@ -1,0 +1,94 @@
+// Defaults
+$font-family-base: "Roboto";
+$enable-shadows: true !default;
+$enable-negative-margins: true !default;
+$enable-rounded: true !default;
+
+$body-bg: black;
+
+//Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+//Navbar
+$navbar-dark-color: rgba(255, 255, 255, 0.95);
+$navbar-nav-link-padding-x: 0;
+$navbar-nav-link-padding-x: 0;
+
+//Buttons
+$btn-border-width: 0;
+$btn-focus-width: 0;
+$btn-box-shadow: 0;
+$btn-focus-box-shadow: 0;
+
+//Tooltip
+$tooltip-arrow-color: #003366;
+$tooltip-color: white;
+$tooltip-bg: #006699;
+$tooltip-opacity: 0.95;
+$tooltip-padding-x: 10px;
+$tooltip-padding-y: 10px;
+
+$spacer: 1px;
+$spacers: (
+  0: 0,
+  1: $spacer * 5,
+  2: $spacer * 10,
+  3: $spacer * 15,
+  4: $spacer * 20,
+  5: $spacer * 25,
+  6: $spacer * 30,
+  7: $spacer * 35,
+  8: $spacer * 40,
+  9: $spacer * 45,
+  10: $spacer * 50,
+  11: $spacer * 55,
+  12: $spacer * 60,
+  13: $spacer * 65,
+  14: $spacer * 70,
+  15: $spacer * 75,
+  16: $spacer * 80,
+  17: $spacer * 85,
+  18: $spacer * 90,
+  19: $spacer * 95,
+  20: $spacer * 100,
+);
+
+//Utitlites
+$utilities: (
+  "opacity": (
+    property: opacity,
+    values: (
+      0: 0,
+      25: 0.25,
+      35: 0.35,
+      40: 0.4,
+      50: 0.5,
+      75: 0.75,
+      80: 0.8,
+      90: 0.9,
+      95: 0.95,
+      100: 1,
+    ),
+  ),
+  "bg-opacity": (
+    css-var: true,
+    class: bg-opacity,
+    values: (
+      0: 0,
+      25: 0.25,
+      50: 0.5,
+      75: 0.75,
+      80: 0.8,
+      90: 0.9,
+      95: 0.95,
+      100: 1,
+    ),
+  ),
+);
